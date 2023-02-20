@@ -1,10 +1,10 @@
 <?php
 
-namespace GeneroWP\PluginBoilerplate;
+namespace GeneroWP\VideoOptimizer;
 
 class Plugin
 {
-    public $name = 'wp-plugin-boilerplate';
+    public $name = 'wp-video-optimizer';
     public $file;
     public $path;
     public $url;
@@ -21,7 +21,7 @@ class Plugin
 
     public function __construct()
     {
-        $this->file = realpath(__DIR__ . '/../wp-plugin-boilerplate.php');
+        $this->file = realpath(__DIR__ . '/../wp-video-optimizer.php');
         $this->path = untrailingslashit(plugin_dir_path($this->file));
         $this->url = untrailingslashit(plugin_dir_url($this->file));
 

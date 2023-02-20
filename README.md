@@ -1,6 +1,6 @@
-# wp-plugin-boilerplate
+# wp-video-optimizer
 
-> A boilerplate WordPress plugin
+> A plugin to optimize videos in the media library
 
 ## Requirements
 
@@ -42,5 +42,5 @@ Build assets
 
 ## Translations
 
-    wp i18n make-pot . languages/wp-plugin-boilerplate.pot
+    wp i18n make-pot . languages/wp-video-optimizer.pot
     wp i18n make-mo languages/

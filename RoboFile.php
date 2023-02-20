@@ -8,10 +8,10 @@ class RoboFile extends \Robo\Tasks
 {
     use \Generoi\Robo\Task\Placeholder\loadTasks;
 
-    public $machineName = 'wp-plugin-boilerplate';
-    public $name = 'WP Plugin Boilerplate';
-    public $namespace = 'PluginBoilerplate';
-    public $description = 'A boilerplate WordPress plugin';
+    public $machineName = 'wp-video-optimizer';
+    public $name = 'WP Video Optimizer';
+    public $namespace = 'VideoOptimizer';
+    public $description = 'A plugin to optimize videos in the media library';
 
     public function rename($machineName = null, $options = [
         'force' => false,
