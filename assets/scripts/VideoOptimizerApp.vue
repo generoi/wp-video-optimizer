@@ -204,7 +204,24 @@ async function onUpload() {
   setStatus('Done!');
   state.attachment = response;
 
-  // Trigger a refresh of the media library if on upload.php page
-  window.wp?.media?.frame?.library?.props?.set?.({ignore: (+ new Date())});
+  if (window.wp?.media?.frame) {
+    const state = window.wp.media.frame.state();
+
+    const addListener = (newModel) => {
+      if (newModel.get('id') !== response.id) {
+        return;
+      }
+
+      state.get('library').off('add', addListener);
+      const selection = state.get('selection');
+      if (selection) {
+        selection.set(newModel);
+      }
+    }
+    state.get('library').on('add', addListener);
+
+    // Refresh
+    state.attributes.library.props.set({ignore:(+new Date())})
+  }
 }
 </script>
