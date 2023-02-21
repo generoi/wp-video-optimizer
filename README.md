@@ -4,33 +4,17 @@
 
 ## Requirements
 
-_Does the plugin have any requirements?_
+- Modern browser (see ffmpeg requirements, note we're using 0.12.0-alpha version which does _NOT_ need `SharedArrayBuffer`).
 
 ## Features
 
-_A list of features_.
-
-## API
-
-_Any hooks exposed?_
-
-```php
-// Load recaptcha script.
-add_filter('gravityforms-timber/options', function ($options) {
-  $options['recaptcha'] = true;
-});
-```
-
+- Adds a button to Optimize videos within the media library.
 ## Development
 
 Install dependencies
 
     composer install
     npm install
-
-Run the tests
-
-    npm run test
 
 Build assets
 
@@ -39,8 +23,3 @@ Build assets
 
     # Watch for changes and re-compile while developing the plugin
     npm run start
-
-## Translations
-
-    wp i18n make-pot . languages/wp-video-optimizer.pot
-    wp i18n make-mo languages/
