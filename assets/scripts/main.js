@@ -1,9 +1,24 @@
-/**
- * @file
- * Browser version of plugin scripts, includign polyfills and external
- * libraries.
- */
+__webpack_public_path__ = window.videoOptimizerWebpackPublicPath;
 
-import PluginComponent from './component';
+async function setupApp(element) {
+  const [
+    {createApp, defineAsyncComponent},
+  ] = await Promise.all([
+    import('vue'),
+  ]);
 
-window.PluginComponent = new PluginComponent();
+  const VideoOptimizerApp = defineAsyncComponent(() => import('./VideoOptimizerApp.vue'));
+
+
+  const app = createApp({});
+  app.component('video-optimizer-app', VideoOptimizerApp);
+  app.mount(element);
+  return app;
+}
+
+document.addEventListener('click', (e) => {
+  if (e.target.matches('[data-video-optimizer-init')) {
+    e.preventDefault();
+    setupApp(e.target.closest('.video-optimizer-wrapper'));
+  }
+});

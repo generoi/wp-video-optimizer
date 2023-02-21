@@ -1,4 +1,11 @@
 const mix = require('laravel-mix');
 
-mix.sass('assets/styles/main.scss', 'dist/')
-  .js('assets/scripts/main.js', 'dist/');
+mix.setPublicPath('./dist');
+mix.js('assets/scripts/main.js', 'dist')
+  .vue({
+    version: 3,
+    extractStyles: false,
+    globalStyles: false,
+  });
+
+mix.copyDirectory('node_modules/@ffmpeg/core/dist/', 'dist/ffmpeg-core');
